@@ -184,8 +184,8 @@ module.exports = {
   generalLimiter,
   strictLimiter,
   syncLimiter,
-  SYNC_INTERVAL_MS,
   verifyLimiter,
+  syncLimiter,
   reminderTriggerLimiter,
   bulkImportLimiter,
   // Exported for tests only — the shared decision function both the Redis

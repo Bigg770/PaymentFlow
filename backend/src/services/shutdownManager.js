@@ -19,6 +19,10 @@ let shutdownStarted = false;
 
 function setReady(value) {
   ready = value;
+  // Flipping to not-ready marks shutdown as started; flipping back to ready
+  // (e.g. in tests that restore state) also resets the guard so the check in
+  // app.js's shutdown() de-duplication logic works correctly.
+  shutdownStarted = !value;
   logger.info(`Readiness set to ${value ? 'ready' : 'not_ready'}`);
 }
 
